@@ -1,0 +1,56 @@
+---
+title: "CodeBook"
+author: "DBS"
+date: "7/4/2018"
+output: 
+  html_document:
+    keep_md: true
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## CodeBook for Course Project 
+
+This code book is generated on `r format(Sys.Date(), '%d/%m/%Y')`. It is to indicate the data sets, variables and summaries calculated.
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+source('run_analysis.r')
+```
+
+```{r}
+str(data)
+```
+
+
+```{r}
+str(averagedData)
+```
+
+### Variables
+Variable    |   Explanation
+--------------- | -------------------------------------
+`subject`   |   identifies the subject who performed the activity.Its range is from 1 to 30 
+`activity`   |   one of the six activites (`WALKING`, `WALKING_UPSTAIRS`, `WALKING_DOWNSTAIRS`, `SITTING`, `STANDING`, `LAYING`) subject was performing when data was collected
+`featureDomain` |   `time` or `frequency` domain that measurement was taken
+`featureAccSignal` | `gravitational` or `body` acceleration signal
+`featureSource` | `accelerometer` or `gyroscope` captured the measurement 
+`featureJerk` | value was obtained by deriving in time to obtain as a `Jerk` signal or not
+`featureMag` | `magnitude` of the signals calculated or not
+`featureStat`| `mean` or `standard deviation` of the measurement
+`featureAxial` | denoting 3-axial signals in the `X`, `Y` and `Z` directions
+`value` | measured or calculated value of the observation
+`count` | count of values averaged for each activity and each subject 
+`average` | average of the values of the variable for each activity and each subject
+
+### Summaries of datasets
+
+```{r  cache=TRUE}
+summary(data)
+summary(averagedData)
+```
+
+
+
